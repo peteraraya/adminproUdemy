@@ -4,6 +4,10 @@ Author: Wrappixel
 Email: niravjoshi87@gmail.com
 File: js
 */
+
+// Llamando una función fuera de angular
+function init_plugings(){
+
 $(function() {
     "use strict";
     $(function() {
@@ -155,3 +159,6 @@ $(function() {
     });
 
 });
+
+
+}

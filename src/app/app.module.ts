@@ -6,8 +6,9 @@ import { APP_ROUTES } from './app.routes';
 
 // Modulos
 import { PagesModules } from './pages/pages.modules';
-import { SharedModule } from './shared/shared.module';
 
+// Servicios
+import { ServiceModule } from './services/service.module';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -32,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     PagesModules,
     FormsModule
   ],
-  providers: [],
+  providers: [ServiceModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
