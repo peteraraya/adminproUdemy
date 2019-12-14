@@ -14,10 +14,12 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 // Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+
 
 
 
@@ -30,7 +32,9 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
         Graficas1Component,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent,
+        RxjsComponent,
     ],
     exports: [
         PagesComponent,
