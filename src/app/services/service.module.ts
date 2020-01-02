@@ -1,23 +1,26 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Proveeidos todos los servicios
-import { 
+import {
   SettingsService,
   SidebarService,
-  SharedService
- } from './service.index';
-// Servicio para agrupar servicios y no recargar el app.module
+  SharedService,
+  UsuarioService
+} from './service.index';
+
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
-  providers:[
+  providers: [
     SettingsService,
     SidebarService,
-    SharedService
-  ]
+    SharedService,
+    UsuarioService
+  ],
+  declarations: []
 })
 export class ServiceModule { }

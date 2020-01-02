@@ -17,7 +17,8 @@ import { RegisterComponent } from './login/register.component';
 
 
 // Temporal
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -32,9 +33,12 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     APP_ROUTES,
     PagesModules,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module,
+    ServiceModule
   ],
-  providers: [ServiceModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
