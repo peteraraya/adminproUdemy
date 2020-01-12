@@ -5,3 +5,11 @@
 .pointer{
     cursor: pointer;
 }
+
+.w150{
+    width:150px;
+    padding: 0rem;
+    margin-right:2px;
+    margin-bottom: 4px;
+    box-shadow: -2px -3px 2px 0px rgba(46, 46, 46, 0.81);
+}

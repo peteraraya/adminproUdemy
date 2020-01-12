@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 // RouterModule
 import { RouterModule } from '@angular/router';
 
+// Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
+
 // Componentes de modulos nuevos
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -14,11 +17,14 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 
 
+
+
 @NgModule({ 
 
     imports:[
         RouterModule,
-        CommonModule
+        CommonModule,
+        PipesModule
     ],
     declarations:[
         HeaderComponent,
