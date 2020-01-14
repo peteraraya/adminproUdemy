@@ -62,8 +62,8 @@ export class RegisterComponent implements OnInit {
     this.forma.setValue({
       nombre: 'Test',
       correo: 'test@test.com',
-      password: '123456',
-      password2: '123456',
+      password: 'asdf1234',
+      password2: 'asdf1234',
       condiciones: true
     })
   }
@@ -74,6 +74,7 @@ export class RegisterComponent implements OnInit {
     if( this.forma.invalid){
       return;
     }
+    
 
     if( !this.forma.value.condiciones ){
       console.log('Debe de acepptar las condiciones');
@@ -93,7 +94,19 @@ export class RegisterComponent implements OnInit {
 
     // Llamamos al servicio
     this._usuarioService.crearUsuario(usuario)
-      .subscribe(resp => this.router.navigate(['/login'])); // redireccionará al login
+      .subscribe( (resp:any) => {
+       console.log(resp);
+      },
+        (err) => {
+          console.log(err.error.errors.message)
+          Swal.fire({
+            icon: 'error',
+            title: err.error.mensaje,
+            text: 'Email debe ser unico'
+          });
+        
+        }
+      ); // redireccionará al login
 
     console.log('Forma Valida ' , this.forma.valid);
 

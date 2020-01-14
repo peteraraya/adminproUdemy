@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//Lllamando una función fuera de angular
+//Llamando una función fuera de angular
 declare function init_plugings();
 @Component({
   selector: 'app-pages',
