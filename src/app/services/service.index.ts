@@ -1,4 +1,5 @@
 
+
 // Agrupación de servicios
 export { LoginGuardGuard } from './guards/login-guard.guard';
 export { SettingsService } from './settings/settings.service';
@@ -6,3 +7,4 @@ export { SharedService } from './shared/shared.service';
 export { SidebarService } from './shared/sidebar.service';
 export { UsuarioService } from './usuario/usuario.service';
 export { SubirArchivoService } from './subir-archivos/subir-archivo.service';
+export { HospitalService } from './hospital/hospital.service';
