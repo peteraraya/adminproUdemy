@@ -56,7 +56,8 @@ export class HospitalService {
 
     return this.http.post( url, { nombre })
       .pipe(map((resp:any)=>{
-        resp.hospital
+        Swal.fire('Hospital Creado con exito', nombre, 'success');
+        return resp.hospital
       }));
   }
 
@@ -76,7 +77,8 @@ export class HospitalService {
     return this.http.put( url,hospital)
                .pipe(
                  map((resp:any)=> {
-                      resp.hospital
+                   Swal.fire('Hospital Actualizado', hospital.nombre , 'success');
+                      return resp.hospital
                 }));
   }
 }

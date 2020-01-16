@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <!-- Buscador dinamico -->
-                <input #input (keyup)="buscarHospital( input.value )" type="text" class="form-control"
+                <input #input (keyup)="buscarHospitales( input.value )" type="text" class="form-control"
                     placeholder="Buscar hospital" name="" id="">
 
 
@@ -18,7 +18,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button class="btn waves-eeffect waves-light btn-rounded btn-primary">
+                    <button (click)="crearHospital()"
+                           class="btn waves-eeffect waves-light btn-rounded btn-primary">
                         <i class="fa fa-plus"></i>
                         Crear Hospital
                     </button>
@@ -36,7 +37,8 @@
                         
                             <tr *ngFor="let hospital of hospitales" >
                                 <td>
-                                    <img [src]="hospital.img | imagen:'hospital'" class="img-50 img-circle pointer">
+                                    <img (click)="actualizarImagen( hospital )"
+                                    [src]="hospital.img | imagen:'hospital'" class="img-50 img-thumbnail pointer">
                                 </td>
                                 <td>
                                     <input [(ngModel)]="hospital.nombre" name="nombre" class="text" class="form-control" placeholder="Nombre del hospital">
