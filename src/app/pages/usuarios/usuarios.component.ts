@@ -48,7 +48,7 @@ export class UsuariosComponent implements OnInit {
 
     this._usuarioService.cargarUsuarios(this.desde)
       .subscribe( (resp:any) =>{
-        // console.log(resp);
+        // // console.log(resp);
         this.totalRegistros = resp.total;
         this.usuarios = resp.usuarios;
         this.cargando = false;
@@ -59,7 +59,7 @@ export class UsuariosComponent implements OnInit {
 
     // que numero quiere moverse el usuario
     let desde = this.desde + valor;
-    console.log(desde);
+    // console.log(desde);
 
     if (desde >= this.totalRegistros) {
       return;
@@ -82,16 +82,16 @@ export class UsuariosComponent implements OnInit {
     }
 
 
-    // console.log( termino );
+    // // console.log( termino );
     this._usuarioService.buscarUsuarios( termino )
       .subscribe((usuarios:Usuario[]) => {
-        console.log( usuarios );
+        // console.log( usuarios );
         this.usuarios = usuarios;
       })
   }
 
   borrarUsuario( usuario:Usuario){
-    console.log( usuario);
+    // console.log( usuario);
 
     // Validación de no borrarse a asi mismo
     if(usuario._id === this._usuarioService.usuario._id){
@@ -109,11 +109,11 @@ export class UsuariosComponent implements OnInit {
       confirmButtonText: 'Si, quiero borrarlo!'
     })
     .then ( borrar => {
-      console.log( borrar );
+      // console.log( borrar );
       if (borrar){
           this._usuarioService.borrarUsuario ( usuario._id )
                               .subscribe( borrado=>{
-                                console.log( borrado );
+                                // console.log( borrado );
                                 this.cargarUsuarios();
                               })
       }

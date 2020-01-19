@@ -19,8 +19,8 @@ export class HospitalService {
   ) { }
 
   // Retorno de observable con todos los hospitales
-  cargarHospitales(){
-    let url = URL_SERVICIOS + '/hospital';
+  cargarHospitales(desde: number = 0){
+    let url = URL_SERVICIOS + '/hospital?desde=' + desde;
     return this.http.get( url )
                 .pipe(map( (resp:any) => {
                   // Propiedad que me dirá cuantos hospitales
@@ -34,8 +34,11 @@ export class HospitalService {
   obtenerHospital( id:string ) {
 
     let url = URL_SERVICIOS + '/hospital/' + id;
-    return this.http.get (url)
-              .pipe(map((resp:any)=>{ resp.hospital}));            
+    return this.http.get ( url )
+              .pipe(
+                map((resp:any)=>{ 
+                  return resp.hospital
+                }));            
 
   }
 

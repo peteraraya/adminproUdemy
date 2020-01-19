@@ -20,7 +20,7 @@ export class AccountSettingsComponent implements OnInit {
 
 
   cambiarColor(tema: string, event) {
-    console.log(event.target);
+    //console.log(event.target);
 
     this.aplicarCheck(event.target);
     // Cambiando color
@@ -33,11 +33,11 @@ export class AccountSettingsComponent implements OnInit {
     // Barrer todos los elementos que tengan el selector y averiguar cual coincide con el tema seleccionado
     // hacer referencias al elemento
 
- 
+
     let selectores: any = this.document.getElementsByClassName('selector');
     for (let ref of selectores) {
       ref.classList.remove('working');
-      }
+    }
     link.classList.add('working');
 
   }

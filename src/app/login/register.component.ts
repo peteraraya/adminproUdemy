@@ -39,9 +39,9 @@ export class RegisterComponent implements OnInit {
   }
 
   constructor(
-        public _usuarioService : UsuarioService,
-        // Para navegar entre paginas
-        public router: Router
+    public _usuarioService: UsuarioService,
+    // Para navegar entre paginas
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -54,11 +54,11 @@ export class RegisterComponent implements OnInit {
       password2: new FormControl(null, Validators.required),
       condiciones: new FormControl(false),
     },
-       {validators: this.sonIguales('password', 'password2')} );
+      { validators: this.sonIguales('password', 'password2') });
 
 
 
-       // enviando data
+    // enviando data
     this.forma.setValue({
       nombre: 'Test',
       correo: 'test@test.com',
@@ -68,16 +68,16 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  registrarUsuario(){
+  registrarUsuario() {
     // Si la forma es valida
 
-    if( this.forma.invalid){
+    if (this.forma.invalid) {
       return;
     }
-    
 
-    if( !this.forma.value.condiciones ){
-      console.log('Debe de acepptar las condiciones');
+
+    if (!this.forma.value.condiciones) {
+      //console.log('Debe de acepptar las condiciones');
       Swal.fire({
         icon: 'warning',
         title: 'Importante',
@@ -94,8 +94,8 @@ export class RegisterComponent implements OnInit {
 
     // Llamamos al servicio
     this._usuarioService.crearUsuario(usuario)
-      .subscribe( (resp:any) => {
-       console.log(resp);
+      .subscribe((resp: any) => {
+        //console.log(resp);
       },
         (err) => {
           console.log(err.error.errors.message)
@@ -104,16 +104,16 @@ export class RegisterComponent implements OnInit {
             title: err.error.mensaje,
             text: 'Email debe ser unico'
           });
-        
+
         }
       ); // redireccionará al login
 
-    console.log('Forma Valida ' , this.forma.valid);
+    // console.log('Forma Valida ' , this.forma.valid);
 
 
-    console.log(this.forma.value);
+    // console.log(this.forma.value);
 
-   
+
   }
 
 }
