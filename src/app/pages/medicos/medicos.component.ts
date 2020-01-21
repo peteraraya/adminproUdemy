@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Medico } from '../../models/medico.model';
 import { MedicoService } from '../../services/service.index';
+import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
 @Component({
   selector: 'app-medicos',
@@ -10,18 +11,25 @@ import { MedicoService } from '../../services/service.index';
 export class MedicosComponent implements OnInit {
 
   medicos: Medico[] = [];
+
+
   // Paginación
   desde: number = 0;
   totalRegistros: number = 0;
   cargando: boolean = true;
 
   constructor(
-    public _medicoService: MedicoService
+    public _medicoService: MedicoService,
+    public _modalUploadService: ModalUploadService
   ) { }
 
   ngOnInit() {
     // Se carga la función
     this.cargarMedicos();
+
+    this._modalUploadService.notificacion
+      .subscribe(() => this.cargarMedicos());
+  
   }
 
 
@@ -69,5 +77,9 @@ export class MedicosComponent implements OnInit {
   borrarMedico(medico: Medico) {
     this._medicoService.borrarMedico(medico._id)
       .subscribe(() => this.cargarMedicos());
+  }
+  
+  actualizarImagen(medico: Medico) {
+    this._modalUploadService.mostrarModal('medicos', medico._id);
   }
 }

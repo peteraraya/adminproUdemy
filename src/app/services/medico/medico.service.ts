@@ -28,7 +28,7 @@ export class MedicoService {
       .pipe(map( (resp:any) => {
 
          this.totalMedicos = resp.total;
-        console.log(resp.medicos )
+        //console.log(resp.medicos )
          return resp.medicos;
       }));
   }

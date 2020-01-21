@@ -1,0 +1,89 @@
+<div class="card-deck">
+
+    <!-- Usuarios -->
+    <div class="card shadow-lg" *ngIf="usuarios.length > 0">
+        <div class="card-header bg-theme m-0 shadow">
+            <h4 class="card-title font-weight-bold text-white">Usuarios</h4>
+        </div>
+        <div class="card-body shadow">
+            <table class="table table-hover table-sm">
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios" [routerLink]="['/usuarios']" class="pointer">
+                        <td class="w70">
+                            <img [src]="usuario.img | imagen" class="img-50 img-fluid  pointer">
+                        </td>
+                        <td>{{ usuario.nombre}}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!--  Médicos -->
+
+    <div class="card shadow-lg" *ngIf="medicos.length > 0">
+        <div class="card-header bg-theme m-0 shadow">
+            <h4 class="card-title font-weight-bold text-white">Médicos</h4>
+        </div>
+        <div class="card-body shadow">
+            <table class="table table-hover table-sm">
+                <tbody>
+                    <tr *ngFor="let medico of medicos" [routerLink]="['/medicos']" class="pointer">
+                        <td class="w70">
+                            <img [src]="medico.img | imagen:'medico'" class="img-50 img-fluid pointer">
+                        </td>
+                        <td>{{ medico.nombre }}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Hospitales -->
+    <div class="card shadow-lg" *ngIf="hospitales.length > 0">
+        <div class="card-header bg-theme m-0 shadow">
+            <h4 class="card-title font-weight-bold text-white">Hospitales</h4>
+        </div>
+        <div class="card-body shadow">
+            <table class="table table-hover table-sm">
+                <tbody>
+                    <tr *ngFor="let hospital of hospitales" [routerLink]="['/hospitales']" class="pointer">
+                        <td class="w70">
+                            <img [src]="hospital.img | imagen:'hsopital'" class="img-50 img-fluid  pointer">
+                        </td>
+                        <td>{{ hospital.nombre }}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="card-row ">
+    <div class="card-body pb-0">
+        <div *ngIf="usuarios.length === 0" class="alert alert-info shadow" role="alert">
+            <h5 class="alert-heading font-weight-bold">Usuarios</h5>
+            <p>No Hay coincidencias de registros</p>
+        </div>
+
+        <div *ngIf="medicos.length === 0" class="alert alert-info shadow" role="alert">
+            <h5 class="alert-heading font-weight-bold">Médicos</h5>
+            <p>No Hay coincidencias de registros</p>
+
+        </div>
+
+        <div *ngIf="hospitales.length === 0" class="alert alert-info shadow" role="alert">
+            <h5 class="alert-heading font-weight-bold">Hospitales</h5>
+            <p>No Hay coincidencias de registros</p>
+
+        </div>
+    </div>
+</div>

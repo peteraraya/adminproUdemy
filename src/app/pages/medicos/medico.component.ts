@@ -64,12 +64,13 @@ export class MedicoComponent implements OnInit {
 
 
   cargarMedico( id:string){
+   
     this._medicoService.cargarMedico(id)
         .subscribe( medico => {
           // console.log(medico);
           // para setear el select
           // let nuevoMedico = new Medico()
-          this.medico = medico
+          this.medico = medico;
           this.medico.hospital = medico.hospital._id; // carga select
           this.cambioHospital( this.medico.hospital); // carga imagen
         })
