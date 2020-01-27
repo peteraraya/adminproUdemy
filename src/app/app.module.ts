@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app.routes';
 
 // Modulos
-import { PagesModules } from './pages/pages.module';
+
 
 // Servicios
 import { ServiceModule } from './services/service.module';
@@ -19,6 +19,9 @@ import { RegisterComponent } from './login/register.component';
 // Temporal
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+// Lazyload
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -29,16 +32,18 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModules,
     FormsModule,
     ReactiveFormsModule,
     SweetAlert2Module,
-    ServiceModule
+    ServiceModule,
+    // Lazy Load
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

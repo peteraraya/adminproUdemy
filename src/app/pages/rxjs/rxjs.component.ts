@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable'; // importación necesaria
-import { retry, map, filter } from 'rxjs/operators';
-import { Subscriber, Subscription } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscriber } from 'rxjs/internal/Subscriber';
 
 
 @Component({

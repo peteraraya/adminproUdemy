@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivationEnd } from '@angular/router';
 import { map, filter } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
 import { Title, Meta, MetaDefinition } from '@angular/platform-browser'; // modificar titulo
 
 @Component({
